@@ -7,16 +7,19 @@ import os
 from email.message import EmailMessage
 import smtplib
 import email_pass
+import pyglet
 
 class loginClass:
     def __init__(self,root):
         self.root=root
         self.root.geometry("1350x700+0+0")
         self.root.state('zoomed')
-        self.root.title("Login Page | Inventory Management System")
+        self.root.title("Login Page | MANAGÉ - Inventory Management System")
         self.root.config(bg="white")
         self.icon_main=PhotoImage(file="images\login_icon.png")
         self.root.iconphoto(False,self.icon_main)
+        pyglet.font.add_file('file.ttf')
+
 
         #=========Variable=============
         self.var_empid=StringVar()
@@ -32,8 +35,8 @@ class loginClass:
         loginFrame=Frame(self.root,bd=0,bg="#ffffff")
         loginFrame.place(x=700,y=110,width=450,height=500)
 
-        lbl_title1=Label(loginFrame,text="Inventory Manegement",font=("century",30,"bold"),bg="#ffffff").pack(side=TOP,fill=Y)
-        lbl_title2=Label(loginFrame,text="System",font=("century",30,"bold"),bg="#ffffff").pack(side=TOP,fill=Y)
+        lbl_title1=Label(loginFrame,text="MANAGÉ",font=("Gloria Hallelujah",30,"bold"),bg="#ffffff").pack(side=TOP,fill=Y)
+        lbl_title1=Label(loginFrame,text="Inventory Management System",font=("Gloria Hallelujah",20,"bold"),bg="#ffffff").pack(side=TOP,fill=Y)
 
         lbl_EmployeeID=Label(loginFrame,text="Employee ID",font=("candara",20),bg="#ffffff").place(x=50,y=140)
         txt_EmployeeID=Entry(loginFrame,textvariable=self.var_empid,font=("candara",15),bg="#ececec").place(x=55,y=180,width=300,height=35)

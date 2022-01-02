@@ -4,16 +4,19 @@ import sqlite3
 import time
 import os
 import tempfile
+import pyglet
 
 class BillClass:
     def __init__(self,root):
         self.root=root
         self.root.geometry("1350x700+0+0")
         self.root.state('zoomed')
-        self.root.title("Inventory Management System | Developed by Arnav Sharma")
+        self.root.title("MANAGÉ - Inventory Management System | Developed by Arnav Sharma")
         self.root.config(bg="white")
         self.icon_main=PhotoImage(file="images\logo.png")
         self.root.iconphoto(False,self.icon_main)
+        pyglet.font.add_file('file.ttf')
+
         
         #=========Variable=======
         self.list_cart=[]
@@ -28,13 +31,14 @@ class BillClass:
         self.var_pro_stock=StringVar()
         
         #====Title====        
-        title=Label(self.root,text="Inventory Management System",image=self.icon_main,compound=LEFT,font=("times new roman",40,"bold"),bg="#0063B2",fg="#ffffff",anchor="w",padx=10).place(x=0,y=0,relwidth=1,height=70)
+        title=Label(self.root,text="MANAGÉ",image=self.icon_main,compound=LEFT,font=("Gloria Hallelujah",35,"bold"),bg="#0063B2",fg="#ffffff",anchor="w",padx=10).place(x=0,y=0,relwidth=1,height=70)
+        title=Label(self.root,text="- Inventory Management System",compound=LEFT,font=("Century",35,"bold"),bg="#0063B2",fg="#ffffff",anchor="w",padx=10).place(x=295,y=0,relwidth=1,height=70)
         
         #====Logout_BTN====
         btn_logout=Button(self.root,text="LOGOUT",command=self.logout,font=("times new roman",17,"bold"),bg="yellow",cursor="hand2").place(x=1200,y=10,height=50,width=140)
         
         #====Header====
-        self.lbl_clock=Label(self.root,text="Welcome to Inventory Management System\t|\t Date: DD-MM-YYY\t|\t Time: HH:MM:SS",font=("times new roman",15),bg="#4d636d",fg="#ffffff")
+        self.lbl_clock=Label(self.root,text="Welcome to MANAGÉ - Inventory Management System\t|\t Date: DD-MM-YYY\t|\t Time: HH:MM:SS",font=("times new roman",15),bg="#4d636d",fg="#ffffff")
         self.lbl_clock.place(x=0,y=70,relwidth=1,height=30)
 
         #====Product_frame
@@ -172,7 +176,7 @@ class BillClass:
         btn_genrate=Button(BillingFrame_Button,text="Genrate Bill",command=self.genrate,font=("groudy old style",15,"bold"),bg="#ff6e40",cursor="hand2").place(x=295,y=70,width=145,height=65)
 
         #====footer====
-        lbl_footer=Label(self.root,text="Inventory Management System | Developed by Arnav Sharma",font=("times new roman",15),bg="#4d636d",fg="#ffffff").pack(side=BOTTOM,fill=X)
+        lbl_footer=Label(self.root,text="MANAGÉ - Inventory Management System | Developed by Arnav Sharma",font=("times new roman",15),bg="#4d636d",fg="#ffffff").pack(side=BOTTOM,fill=X)
         with open('login.txt','r') as file:
             self.var_loginid = file.read()
             self.var_loginid=str(self.var_loginid)
@@ -347,7 +351,7 @@ class BillClass:
     def bill_top(self):
         self.invoice="8"+str(int(time.strftime("%H%M%S"))+int(time.strftime("%d%m%Y")))
         bill_top_temp=f'''
-\t     Inventory Management System
+\t     MANAGÉ - Inventory Management System
 \t   Phone No. 98725***** , Delhi-125001
 {str("="*52)}
  Customer Name: {self.var_customer_name.get()}
@@ -409,7 +413,7 @@ class BillClass:
             date_=time.strftime("%d/%m/%Y")
             cur.execute("select name from employee where eid=?",(self.var_loginid,))
             employee=cur.fetchall()
-            self.lbl_clock.config(text=f"Hi {str(employee[0][0])}, Welcome to Inventory Management System\t|\tDate:{str(date_)}\t\t|\tTime: {str(time_)}",font=("times new roman",15),bg="#4d636d",fg="#ffffff")
+            self.lbl_clock.config(text=f"Hi {str(employee[0][0])}, Welcome to MANAGÉ - Inventory Management System\t|\tDate:{str(date_)}\t\t|\tTime: {str(time_)}",font=("times new roman",15),bg="#4d636d",fg="#ffffff")
             self.lbl_clock.after(200,self.update_date_time)
         except Exception as ex:
             messagebox.showerror("Error",f"Error due to : {str(ex)}",parent=self.root)
