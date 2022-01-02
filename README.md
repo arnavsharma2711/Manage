@@ -1,4 +1,4 @@
-# Inventory Management System
+# Managé - Inventory Management System
 
 A python project dealing with inventory management and bill genration.
 
@@ -9,7 +9,9 @@ A python project dealing with inventory management and bill genration.
 
 ```bash
 pip install pillow
+pip install pyglet
 ```
+* Install remaining modules if any more error came up
 * This project is made for 1366 x 768 resolution system. So, adjust the code based on your system's resolution. Also the project was made in 100% scale property of display which can be edited in settings.
 ### Email Servies
 To get access to the email serives in the project follow the steps given below:
