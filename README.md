@@ -1,91 +1,124 @@
-# Managé - Inventory Management System
+Here’s a polished and professional README for your **Managé - Inventory Management System**, keeping it developer-friendly, informative, and visually neat. I’ve improved grammar, fixed typos, and organized everything for a better experience. Let’s go! 🚀
 
-A python project dealing with inventory management and bill genration.
+---
 
-## Prerequisite
-* You must have [python](https://www.python.org/downloads//) installed in your system.
+# 📦 Managé – Inventory Management System
 
-* Use the package manager [pip](https://pip.pypa.io/en/stable/) to install pillow module.
+**Managé** is a Python-based desktop application that helps manage inventory and generate bills. Designed with a GUI using **Tkinter**, it allows for real-time tracking of products, categories, suppliers, employees, and sales records — all tied together with SQLite. Two types of user roles provide secure and scalable access.
+
+---
+
+## 📋 Prerequisites
+
+- ✅ [Python 3.x](https://www.python.org/downloads/) installed
+- ✅ Install dependencies via pip:
 
 ```bash
 pip install pillow
 pip install pyglet
 ```
-* Install remaining modules if any more error came up
-* This project is made for 1366 x 768 resolution system. So, adjust the code based on your system's resolution. Also the project was made in 100% scale property of display which can be edited in settings.
-### Email Servies
-To get access to the email serives in the project follow the steps given below:
 
-1.Go to your [Google Accout](https://myaccount.google.com/)\
-2.Search for app password in the search menu.\
-3.Select Mail in Select App Menu and Windows Computer in Select Devices Menu.\
-4.Click on genrate.\
-5.Copy the genrated password to [email_pass.py](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/email_pass.py) in the given quotes along with your email.
+> If any additional module errors occur, install them individually as prompted.
 
-## How to access the project
-Execute the login.py file from your desired code editor.
+> 🖥️ **Note**: This project was built on a 1366x768 screen resolution using 100% display scaling. If the UI looks off, tweak widget dimensions in code to suit your system.
 
-Default User ID and password are given below:\
-* Administrator Path -> Opens Dashboard\
-Employee Id ->1001 \
-Password -> 123
-* Employee Path -> Opens Billing Menu \
-Employee Id ->2001 \
-Password -> 123
+---
 
-In the administrator path you have access to all CRUD (Create Read Update Delete) operation.\
-In the employee path you have access to bill genration operations only.
-## Synopsis of the project
- The goal of this project 
-was to help the user to get a working project which consists of:
-* The employee, supplier, category, product database.
-* Product database connection with supplier and category.
-* Two types of account, An administrator and an employee
-* Administrator has access to add, update and delete data from the database.
-* Administrator also have access to the sales record.
-* Employee has access to billing menu having a task to create a cart and generate the 
-bills which are kept in the sales record.
-* A login page for verification of account type.
-* A forgot password section accessible to the user.
-Taking all these into account the software was developed.
+## ✉️ Email Services Setup
 
-## Flow Chart
-![Flow Chart](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/FLOW%20CHART.png?raw=true "Flow Chart")
+To enable **email services** (e.g., for password recovery):
 
-## Screenshots
-* Login Page : ![Login Page](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/1.1.Login%20Page.png?raw=true "Login Page")
+1. Go to your [Google Account](https://myaccount.google.com/)
+2. Search for “App Passwords” in the security settings
+3. Select:
+   - App: **Mail**
+   - Device: **Windows Computer**
+4. Click **Generate** to get a secure password
+5. Copy the generated password and paste it into the [`email_pass.py`](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/email_pass.py) file, replacing the placeholder string
 
-* Dashboard : ![Dashboard](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/2.1.Dashboard.png?raw=true "Dashboard")
+---
 
-* Employee Menu : ![Employee Menu](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/3.1.Emp-Menu.png?raw=true "Employee Menu")
+## 🧑‍💻 How to Run the Project
 
-* Supplier Menu : ![Login Pag](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/4.1.Sup-menu.png?raw=true "Supplier Menu")
+Launch the project by executing:
 
-* Category Menu : ![Category Menu](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/5.1.Cat-Menu.png?raw=true "Category Menu")
+```bash
+python login.py
+```
 
-* Product Menu : ![Product Menu](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/4.1.Sup-menu.png?raw=true "Product Menu")
+### 🔐 Default Login Credentials
 
-* Sales Menu : ![Sales Menu](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/7.2.Sales-View.png?raw=true "Sales Menu")
+| User Type | ID | Password | Access |
+|-----------|----|----------|--------|
+| Admin     | 1001 | 123 | Full Dashboard + CRUD |
+| Employee  | 2001 | 123 | Billing System Only |
 
-* Billing Menu : ![Billing Menu](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/9.1.Bill-Menu.png?raw=true "Billing Menu")
-## Future Scope of this project
-In the future this project can consist of a SMSs update system where the user can get 
-notification from the administrator and the customer can get his/her bill details. A customer 
-service can also be created to deal with the issues of customer related to their bills and 
-product. Scalability of the product can be achieved by storing the database to a server which 
-makes us to access the same data to various users at the same time
-## References
-* Tinker Module->\
-https://www.w3schools.in/python-tutorial/gui-programming/
-* Pillow Module (ImageTk, Image)->\
-https://pillow.readthedocs.io/en/stable/reference/Image.html
-https://pillow.readthedocs.io/en/stable/reference/ImageTk.html
-* Time Module->\
-https://docs.python.org/3/library/time.html
-* OS Module->\
-https://docs.python.org/3/library/os.html
-* smtplib Module->\
-https://docs.python.org/3/library/smtplib.html
-https://docs.python.org/3/library/email.examples.html
-* sqlite3 Module-->\
-https://www.tutorialspoint.com/sqlite/sqlite_python.html
+- **Admin View**: Complete access (add/update/delete/view records)
+- **Employee View**: Limited to billing operations
+
+---
+
+## 🧠 Project Features (Synopsis)
+
+The system was developed to provide:
+
+- 📇 Management of **Employees, Suppliers, Categories, Products**
+- 🔗 Product database linked with Suppliers and Categories
+- 🔐 **Role-based Access**:
+  - Admins can perform **CRUD** operations and view **Sales Reports**
+  - Employees can **generate bills** and add to sales records
+- 🧾 Smart **Billing System** with cart-based item handling
+- 🔐 Login verification and a **Forgot Password** module
+- Local **SQLite database** for data storage
+
+---
+
+## 🧭 Flow Chart
+
+![Flow Chart](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/FLOW%20CHART.png?raw=true)
+
+---
+
+## 🖼️ Screenshots
+
+| Feature | Preview |
+|--------|---------|
+| Login Page | ![Login](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/1.1.Login%20Page.png?raw=true) |
+| Dashboard | ![Dashboard](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/2.1.Dashboard.png?raw=true) |
+| Employee Menu | ![Emp Menu](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/3.1.Emp-Menu.png?raw=true) |
+| Supplier Menu | ![Supplier](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/4.1.Sup-menu.png?raw=true) |
+| Category Menu | ![Category](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/5.1.Cat-Menu.png?raw=true) |
+| Product Menu | ![Product](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/4.1.Sup-menu.png?raw=true) |
+| Sales Menu | ![Sales](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/7.2.Sales-View.png?raw=true) |
+| Billing Menu | ![Billing](https://github.com/arnavsharma2711/Inventory-Management-System/blob/main/Screenshot/9.1.Bill-Menu.png?raw=true) |
+
+---
+
+## 🔮 Future Scope
+
+In future iterations, this project could expand to include:
+
+- 📱 **SMS notification system** for billing and admin alerts
+- 🧑‍💼 **Customer support module** for resolving product or billing concerns
+- ☁️ **Cloud-hosted database** to support real-time, multi-user access across systems
+- 📊 **Advanced analytics** and graphical reports for sales and stock insights
+
+---
+
+## 📚 References
+
+- **Tkinter (GUI)** → https://www.w3schools.in/python-tutorial/gui-programming/
+- **Pillow (Image handling)** →  
+  - https://pillow.readthedocs.io/en/stable/reference/Image.html  
+  - https://pillow.readthedocs.io/en/stable/reference/ImageTk.html
+- **Pyglet (Audio/Media)** → https://pyglet.readthedocs.io/en/latest/
+- **Time Module** → https://docs.python.org/3/library/time.html
+- **OS Module** → https://docs.python.org/3/library/os.html
+- **smtplib (Email)** →  
+  - https://docs.python.org/3/library/smtplib.html  
+  - https://docs.python.org/3/library/email.examples.html
+- **SQLite (Database)** → https://www.tutorialspoint.com/sqlite/sqlite_python.htm
+
+---
+
+Let me know if you’d like help adding a `requirements.txt`, packaging into `.exe`, adding unit tests, or versioning your modules! ⚙️📦
